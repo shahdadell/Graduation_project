@@ -9,10 +9,8 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacementNamed(MainScreen.routName);
-          },
+        title: Text(
+          "Sign up",
         ),
       ),
       body: Center(
