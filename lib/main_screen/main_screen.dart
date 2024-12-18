@@ -75,7 +75,7 @@ class MainScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context)
-                          .pushReplacementNamed(SignInScreen.routName);
+                          .pushNamed(SignInScreen.routName);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(11),

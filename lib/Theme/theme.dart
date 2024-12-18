@@ -16,7 +16,17 @@ class MyTheme{
         color: whiteColor,
         fontSize: 18,
         fontWeight: FontWeight.w500
-      )
-    )
+      ),
+      titleMedium: TextStyle(
+          color: blackColor,
+          fontSize: 24,
+          fontWeight: FontWeight.bold
+      ),
+      titleLarge: TextStyle(
+          color: blackColor,
+          fontSize: 16,
+          fontWeight: FontWeight.w500
+      ),
+    ),
   );
 }
