@@ -10,6 +10,9 @@ class AppImages{
   static const String facebook = 'assets/images/facebook.png';
   static const String apple = 'assets/images/apple.png';
   static const String signin = 'assets/images/signin.png';
+  static const String vector = 'assets/images/vector.png';
+  static const String ButtonApple = 'assets/images/ButtonApple.png';
+  static const String pass = 'assets/images/pass.png';
 
 
 }
