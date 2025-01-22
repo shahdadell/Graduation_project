@@ -170,24 +170,24 @@ class _SignInScreenState extends State<SignInScreen> {
                       onTap: (){},
                       child: Image.asset(
                         AppImages.google,
-                        width: 38,
-                        height: 38,
+                        width: 30,
+                        height: 30,
                       ),
                     ),
                     InkWell(
                       onTap: (){},
                       child: Image.asset(
                         AppImages.facebook,
-                        width: 35,
-                        height: 35,
+                        width: 30,
+                        height: 30,
                       ),
                     ),
                     InkWell(
                       onTap: (){},
                       child: Image.asset(
                        "assets/images/ButtonApple.png",
-                        width: 45,
-                        height: 45,
+                        width: 33,
+                        height: 33,
                       ),
                     ),
                   ],

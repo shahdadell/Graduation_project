@@ -18,6 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   late TextEditingController emailController;
   late TextEditingController phoneController;
   late TextEditingController passwordController;
+  bool? value = false;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -170,19 +171,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 5),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: const Text(
-                        "Forget Password ?",
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            color: Color(0xffF87146),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
+                    Checkbox(
+                      tristate: true,
+                      value: value,
+                      checkColor: MyTheme.whiteColor,
+                      activeColor: MyTheme.orangeColor,
+                      onChanged: (bool? newValue) {
+                        setState(
+                          () {
+                            value = newValue;
+                          },
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: SizedBox(
+                        width: 300,
+                        child: Image.asset(
+                          "assets/images/check.png",
+                        ),
                       ),
                     ),
                   ],
@@ -202,7 +214,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -223,24 +235,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onTap: () {},
                       child: Image.asset(
                         AppImages.google,
-                        width: 38,
-                        height: 38,
+                        width: 30,
+                        height: 30,
                       ),
                     ),
                     InkWell(
                       onTap: () {},
                       child: Image.asset(
                         AppImages.facebook,
-                        width: 35,
-                        height: 35,
+                        width: 30,
+                        height: 30,
                       ),
                     ),
                     InkWell(
                       onTap: () {},
                       child: Image.asset(
                         "assets/images/ButtonApple.png",
-                        width: 45,
-                        height: 45,
+                        width: 33,
+                        height: 33,
                       ),
                     ),
                   ],
