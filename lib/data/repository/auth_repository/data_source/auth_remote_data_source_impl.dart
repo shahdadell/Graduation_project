@@ -1,6 +1,6 @@
 import 'package:graduation_project/data/api/api_manager.dart';
-import 'package:graduation_project/data/repository/data_source/auth_remote_data_source.dart';
 import 'package:graduation_project/data/response/RegisterResponse.dart';
+import 'package:graduation_project/domain/repository/data_source/auth_remote_data_source.dart';
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   ApiManager apiManager;

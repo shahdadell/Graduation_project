@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/App_Images/app_images.dart';
 import 'package:graduation_project/data/repository/auth_repository/repository/auth_repository_impl.dart';
+import 'package:graduation_project/domain/use_case/register_use_case.dart';
 import 'package:graduation_project/ui/Theme/dialog_utils.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
 import 'package:graduation_project/ui/main_screen/main_screen.dart';
@@ -20,7 +21,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   RegisterScreenViewmodel viewmodel = RegisterScreenViewmodel(
-    repositoryContract: injectAuthRepositoryContract(),
+   registerUseCase: injectRegisterUseCase(),
   );
 
   //
@@ -56,7 +57,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         } else if (state is RegisterSuccessState) {
           DialogUtils.hideLoading(context);
           DialogUtils.showMessage(context, state.response.message ?? '',
-              posActionName: 'Ok');
+              posActionName: 'Ok',
+            posAction: (){
+              Navigator.of(context).pushReplacementNamed(
+                OtpScreen.routName,
+                arguments: viewmodel.emailController.text,
+              );
+            }
+          );
         }
       },
       child: Scaffold(

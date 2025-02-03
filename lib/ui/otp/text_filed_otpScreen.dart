@@ -20,7 +20,7 @@ class TextFiledOtpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
+      child: TextField(
         onChanged: (value){
           if(value.length == 1){
             FocusScope.of(context).nextFocus();
