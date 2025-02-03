@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/App_Images/app_images.dart';
-import 'package:graduation_project/Main_Screen/main_screen.dart';
-import 'package:graduation_project/Theme/theme.dart';
-import 'package:graduation_project/forget_password/forget_password.dart';
-import 'package:graduation_project/sing_in_screen/text_filed_login.dart';
+import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/forget_password/forget_password.dart';
+import 'package:graduation_project/ui/main_screen/main_screen.dart';
+import 'package:graduation_project/ui/sing_in_screen/text_filed_login.dart';
 
 class SignInScreen extends StatefulWidget {
   static const String routName = 'SignInScreen';
