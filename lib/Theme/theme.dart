@@ -34,6 +34,11 @@ class MyTheme{
           fontSize: 16,
           fontWeight: FontWeight.w500
       ),
+      bodyLarge: TextStyle(
+          color: blackColor,
+          fontSize: 20,
+          fontWeight: FontWeight.bold
+      ),
     ),
   );
 }

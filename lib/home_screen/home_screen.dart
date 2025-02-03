@@ -31,11 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   "Special offer",
-                  style: textStyle(20, FontWeight.w700, MyTheme.blackColor),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  // textStyle(20, FontWeight.w700, MyTheme.blackColor),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
@@ -79,15 +80,14 @@ class _HomeScreenState extends State<HomeScreen> {
               GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4
-                ),
+                    crossAxisCount: 4),
                 itemCount: categories.length,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   TextAndImageClass item = categories[index];
                   return InkWell(
                     overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-                    onTap: (){},
+                    onTap: () {},
                     child: Column(
                       children: [
                         Image.asset(
@@ -97,7 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Text(
                           item.name!,
-                          style: textStyle(14, FontWeight.w600, MyTheme.blackColor),
+                          style: textStyle(
+                              14, FontWeight.w600, MyTheme.blackColor),
                         )
                       ],
                     ),
@@ -109,9 +110,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16)
-                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(16)),
                   width: 327,
                   height: 116,
                   child: Stack(
@@ -120,13 +120,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           alignment: Alignment.bottomRight,
                           child: ClipRRect(
                               borderRadius: BorderRadius.circular(16),
-                              child: Image.asset(AppImages.chicken)
-                          )
-                      ),
+                              child: Image.asset(AppImages.chicken))),
                       ClipRRect(
-                          borderRadius: const BorderRadius.horizontal(left: Radius.circular(16)),
-                          child: Image.asset(AppImages.discovershape)
-                      ),
+                          borderRadius: const BorderRadius.horizontal(
+                              left: Radius.circular(16)),
+                          child: Image.asset(AppImages.discovershape)),
                       Padding(
                         padding: const EdgeInsets.all(10),
                         child: Column(
@@ -137,7 +135,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Some interesting events of YUMMY FOOD",
                                 textAlign: TextAlign.start,
-                                style: textStyle(16, FontWeight.w700, MyTheme.whiteColor,
+                                style: textStyle(
+                                  16,
+                                  FontWeight.w700,
+                                  MyTheme.whiteColor,
                                 ),
                               ),
                             ),
@@ -150,7 +151,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Text(
                                 "Discover",
-                                style: textStyle(12, FontWeight.w600, MyTheme.blackColor),
+                                style: textStyle(
+                                    12, FontWeight.w600, MyTheme.blackColor),
                               ),
                             )
                           ],

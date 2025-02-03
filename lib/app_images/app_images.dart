@@ -5,6 +5,7 @@ class AppImages{
   static const String discovershape = 'assets/images/discovershape.png';
   static const String notification = 'assets/images/notification.png';
   static const String knifeburger = 'assets/images/knifeburger.jpeg';
+  static const String coffeehouse = 'assets/images/coffeehouse.png';
   static const String appleButton = 'assets/images/ButtonApple.png';
   static const String background = 'assets/images/background.png';
   static const String drawericon = 'assets/images/drawericon.png';
@@ -33,8 +34,10 @@ class AppImages{
   static const String other = 'assets/images/other.png';
   static const String food5 = 'assets/images/food5.png';
   static const String heart = 'assets/images/heart.png';
+  static const String hotel = 'assets/images/hotel.png';
   static const String food3 = 'assets/images/food3.png';
   static const String sun = 'assets/images/sunicon.png';
+  static const String check = 'assets/images/check.png';
   static const String apple = 'assets/images/apple.png';
   static const String meet = 'assets/images/meet.jpeg';
   static const String food = 'assets/images/food.png';
@@ -44,7 +47,10 @@ class AppImages{
   static const String text = 'assets/images/text.png';
   static const String sign = 'assets/images/sign.png';
   static const String pass = 'assets/images/pass.png';
+  static const String tour = 'assets/images/tour.png';
   static const String bbq = 'assets/images/bbq.png';
+
+
 
 
 }

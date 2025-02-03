@@ -50,6 +50,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         ),
         centerTitle: true,
+        backgroundColor: Colors.transparent,
         title: Text(
           "Sign in",
           style: Theme.of(context).textTheme.titleMedium,
@@ -98,7 +99,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 const SizedBox(height: 10),
                 TextFiledLogin(
-                  obsecureText: true,
+                  isObsecure: true,
                   password: true,
                   text: 'Password',
                   type: TextInputType.visiblePassword,
