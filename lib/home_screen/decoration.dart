@@ -14,7 +14,7 @@ InputDecoration searchFieldDecoration(){
           color: MyTheme.iconGrayColor,
         ),
       ),
-      hintText: "What are you yearning for?",
+      hintText: "What are you looking for?",
       hintStyle: GoogleFonts.rubik(
         color: MyTheme.iconGrayColor,
         fontWeight: FontWeight.w400,

@@ -4,7 +4,6 @@ import 'package:graduation_project/Theme/theme.dart';
 import 'package:graduation_project/app_images/app_images.dart';
 import 'package:graduation_project/home_screen/style.dart';
 import 'package:graduation_project/home_screen/homevariables.dart';
-
 import 'decoration.dart';
 
 Widget homeTopBar(){
@@ -99,7 +98,6 @@ Widget searchField(double w){
     ),
   );
 }
-
 
 Widget carouselSliderImage (String image){
   return ClipRRect(

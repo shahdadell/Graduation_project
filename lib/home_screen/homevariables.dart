@@ -5,14 +5,14 @@ String userName = "Menna Hosny Ali";
 int currentindex = 0;
 
 List <TextAndImageClass> categories = [
-  TextAndImageClass(icon: AppImages.sale, name: "Flash deals"),
-  TextAndImageClass(icon: AppImages.restaurant, name: "Nice shop"),
-  TextAndImageClass(icon: AppImages.foodapp, name: "points"),
-  TextAndImageClass(icon: AppImages.icecream, name: "Rice"),
-  TextAndImageClass(icon: AppImages.noodles, name: "Noodles"),
-  TextAndImageClass(icon: AppImages.vegetable, name: "Vegetable"),
-  TextAndImageClass(icon: AppImages.bbq, name: "BBQ"),
-  TextAndImageClass(icon: AppImages.other, name: "Other"),
+  //TextAndImageClass(icon: AppImages.sale, name: "Flash deals"),
+  TextAndImageClass(icon: AppImages.restaurant, name: "Restaurants"),
+  TextAndImageClass(icon: AppImages.coffeehouse, name: "Coffee"),
+  TextAndImageClass(icon: AppImages.tour, name: "Tourism places"),
+  TextAndImageClass(icon: AppImages.hotel, name: "Hotel"),
+  //TextAndImageClass(icon: AppImages.vegetable, name: "Vegetable"),
+  //TextAndImageClass(icon: AppImages.bbq, name: "BBQ"),
+  //TextAndImageClass(icon: AppImages.other, name: "Other"),
 ];
 
 List <CardClass> Row1 = [

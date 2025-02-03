@@ -22,37 +22,37 @@ class MainScreen extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            leading: Padding(
-              padding: const EdgeInsets.all(2),
-              child: Container(
-                margin: const EdgeInsets.only(left: 10, right: 10),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(HomeScreen.routName);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0x90f26b0a),
-                    shape: ContinuousRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                  ),
-                  child: const Text(
-                    textAlign: TextAlign.center,
-                    "visiting as a guest",
-                    style: TextStyle(
-                        color: Color(0xffFFFFFF),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
-            ),
-            leadingWidth: 160,
-          ),
+          // appBar: AppBar(
+          //   backgroundColor: Colors.transparent,
+          //   elevation: 0,
+          //   leading: Padding(
+          //     padding: const EdgeInsets.all(2),
+          //     child: Container(
+          //       margin: const EdgeInsets.only(left: 10, right: 10),
+          //       child: ElevatedButton(
+          //         onPressed: () {
+          //           Navigator.of(context)
+          //               .pushReplacementNamed(HomeScreen.routName);
+          //         },
+          //         style: ElevatedButton.styleFrom(
+          //           backgroundColor: const Color(0x90f26b0a),
+          //           shape: ContinuousRectangleBorder(
+          //             borderRadius: BorderRadius.circular(40),
+          //           ),
+          //         ),
+          //         child: const Text(
+          //           textAlign: TextAlign.center,
+          //           "visiting as a guest",
+          //           style: TextStyle(
+          //               color: Color(0xffFFFFFF),
+          //               fontSize: 16,
+          //               fontWeight: FontWeight.w500),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          //   leadingWidth: 160,
+          // ),
           body: Center(
             child: Padding(
               padding: const EdgeInsets.all(25),
@@ -71,11 +71,10 @@ class MainScreen extends StatelessWidget {
                   Image.asset(
                     AppImages.text,
                   ),
-                  const Spacer(),
+                  const SizedBox(height: 60),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed(SignInScreen.routName);
+                      Navigator.of(context).pushNamed(SignInScreen.routName);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(11),
@@ -137,60 +136,81 @@ class MainScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 60),
                   ElevatedButton(
                     onPressed: () {
-                      // Navigator.of(context)
-                      //     .pushReplacementNamed(HomeScreen.routName);
+                      Navigator.of(context)
+                          .pushReplacementNamed(HomeScreen.routName);
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(11),
-                      backgroundColor: MyTheme.blueColor2,
+                      backgroundColor: const Color(0x90f26b0a),
+                      shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          AppImages.facebook,
-                          width: 30,
-                          height: 30,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          textAlign: TextAlign.center,
-                          "Continue with FaceBook",
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ),
-                      ],
+                    child: const Text(
+                      textAlign: TextAlign.center,
+                      "visiting as a guest",
+                      style: TextStyle(
+                          color: Color(0xffFFFFFF),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Navigator.of(context)
-                      //     .pushReplacementNamed(HomeScreen.routName);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(11),
-                      backgroundColor: MyTheme.blackColor,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          AppImages.apple,
-                          width: 30,
-                          height: 30,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          textAlign: TextAlign.center,
-                          "Continue with Apple",
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ),
-                      ],
-                    ),
-                  ),
+                  // const SizedBox(height: 15),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     // Navigator.of(context)
+                  //     //     .pushReplacementNamed(HomeScreen.routName);
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     padding: const EdgeInsets.all(11),
+                  //     backgroundColor: MyTheme.blueColor2,
+                  //   ),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Image.asset(
+                  //         AppImages.facebook,
+                  //         width: 30,
+                  //         height: 30,
+                  //       ),
+                  //       const SizedBox(width: 10),
+                  //       Text(
+                  //         textAlign: TextAlign.center,
+                  //         "Continue with FaceBook",
+                  //         style: Theme.of(context).textTheme.titleSmall,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // const SizedBox(height: 15),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     // Navigator.of(context)
+                  //     //     .pushReplacementNamed(HomeScreen.routName);
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     padding: const EdgeInsets.all(11),
+                  //     backgroundColor: MyTheme.blackColor,
+                  //   ),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Image.asset(
+                  //         AppImages.apple,
+                  //         width: 30,
+                  //         height: 30,
+                  //       ),
+                  //       const SizedBox(width: 10),
+                  //       Text(
+                  //         textAlign: TextAlign.center,
+                  //         "Continue with Apple",
+                  //         style: Theme.of(context).textTheme.titleSmall,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

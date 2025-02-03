@@ -9,7 +9,7 @@ class TextFiledLogin extends StatelessWidget {
   TextEditingController controller;
   String? Function(String?)? validator;
   bool password;
-  bool obsecureText;
+  bool isObsecure;
 
   TextFiledLogin({
     super.key,
@@ -20,13 +20,13 @@ class TextFiledLogin extends StatelessWidget {
     required this.controller,
     required this.validator,
     this.password = false,
-    this.obsecureText = false,
+    this.isObsecure = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: password,
+      obscureText: isObsecure,
       validator: validator,
       controller: controller,
       keyboardType: type,
