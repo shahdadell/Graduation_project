@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:graduation_project/Theme/theme.dart';
 import 'package:graduation_project/app_images/app_images.dart';
-import 'package:graduation_project/home_screen/style.dart';
-import 'package:graduation_project/home_screen/homevariables.dart';
+import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/home_screen/style.dart';
 import 'decoration.dart';
+import 'homevariables.dart';
 
 Widget homeTopBar(){
   return Row(

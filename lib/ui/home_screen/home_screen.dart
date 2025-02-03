@@ -1,11 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/Theme/theme.dart';
 import 'package:graduation_project/app_images/app_images.dart';
-import 'package:graduation_project/home_screen/homewidgets.dart';
-import 'package:graduation_project/home_screen/style.dart';
-import 'package:graduation_project/home_screen/homevariables.dart';
+import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/home_screen/style.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'homevariables.dart';
+import 'homewidgets.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routName = 'HomeScreen';
