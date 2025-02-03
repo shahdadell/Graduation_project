@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme,
-      initialRoute: OtpScreen.routName,
+      initialRoute: SplashScreen.routName,
       routes: {
         SplashScreen.routName : (context) => const SplashScreen(),
         HomeScreen.routName : (context) => const HomeScreen(),
