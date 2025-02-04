@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graduation_project/domain/repository/repository/auth_repository_contract.dart';
 import 'package:graduation_project/domain/use_case/register_use_case.dart';
 import 'package:graduation_project/ui/sign_up_screen/cubit/register_state.dart';
 
@@ -14,7 +13,7 @@ class RegisterScreenViewmodel extends Cubit<RegisterState> {
   RegisterUseCase registerUseCase ;
   bool? value = false;
   var formKey = GlobalKey<FormState>();
-  void SignUp() async {
+  void SignUp(BuildContext context) async {
     if (formKey.currentState?.validate() == true) {
       try {
         emit(RegisterLoadingState(loadingMassage: "Loading..."));

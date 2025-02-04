@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:graduation_project/data/api/api_constance.dart';
-import 'package:graduation_project/data/request/RegisterRequest.dart';
-import 'package:graduation_project/data/response/RegisterResponse.dart';
+import 'package:graduation_project/data/model/HomeScreen.dart';
+import 'package:graduation_project/data/model/request/RegisterRequest.dart';
+import 'package:graduation_project/data/model/response/RegisterResponse.dart';
 import 'package:http/http.dart' as http;
 
 class ApiManager {
@@ -26,18 +27,18 @@ class ApiManager {
     return RegisterResponse.fromJson(jsonDecode(response.body));
   }
 
-  // static Future<HomeScreen> getSources() async {
-  //   Uri url = Uri.https(
-  //     ApiConstants.baseUrl,
-  //     ApiConstants.sourceApi,
-  //   );
-  //   try{
-  //     var response = await http.get(url);
-  //     var bodyString = response.body;
-  //     var json = jsonDecode(bodyString);
-  //     return HomeScreen.fromJson(json);
-  //   }catch (e){
-  //     throw e ;
-  //   }
-  // }
+  static Future<HomeScreen> getSources() async {
+    Uri url = Uri.https(
+      ApiConstants.baseUrlHome,
+      ApiConstants.homeApi,
+    );
+    try{
+      var response = await http.get(url);
+      var bodyString = response.body;
+      var json = jsonDecode(bodyString);
+      return HomeScreen.fromJson(json);
+    } catch (e){
+      throw e ;
+    }
+  }
 }

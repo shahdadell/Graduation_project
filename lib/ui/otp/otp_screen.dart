@@ -5,10 +5,13 @@ import 'package:graduation_project/ui/sign_up_screen/sign_up_screen.dart';
 
 class OtpScreen extends StatelessWidget {
   static const String routName = 'otp';
-  const OtpScreen({super.key});
+  OtpScreen({super.key});
+  var formKey = GlobalKey<FormState>();
+
 
   @override
   Widget build(BuildContext context) {
+    final String email = ModalRoute.of(context)?.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
@@ -96,7 +99,9 @@ class OtpScreen extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                isOtpValid();
+              },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(11),
                 backgroundColor: MyTheme.orangeColor,
@@ -111,5 +116,10 @@ class OtpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+ void isOtpValid() {
+    if (formKey.currentState?.validate() == true) {
+    }
   }
 }

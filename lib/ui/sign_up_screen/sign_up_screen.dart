@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/App_Images/app_images.dart';
-import 'package:graduation_project/data/repository/auth_repository/repository/auth_repository_impl.dart';
 import 'package:graduation_project/domain/use_case/register_use_case.dart';
 import 'package:graduation_project/ui/Theme/dialog_utils.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/home_screen/home_screen.dart';
 import 'package:graduation_project/ui/main_screen/main_screen.dart';
 import 'package:graduation_project/ui/otp/otp_screen.dart';
 import 'package:graduation_project/ui/sign_up_screen/text_filed_siginup.dart';
@@ -24,26 +24,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
    registerUseCase: injectRegisterUseCase(),
   );
 
-  //
-  // @override
-  // void dispose() {
-  //   super.dispose();
-  //   nameController.dispose();
-  //   emailController.dispose();
-  //   phoneController.dispose();
-  //   passwordController.dispose();
-  // }
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   nameController = TextEditingController();
-  //   emailController = TextEditingController();
-  //   phoneController = TextEditingController();
-  //   passwordController = TextEditingController();
-  // }
-  //
-  // @override
+
+  @override
+  void dispose() {
+    super.dispose();
+    viewmodel.userNameController.dispose();
+    viewmodel.emailController.dispose();
+    viewmodel.phoneController.dispose();
+    viewmodel.passwordController.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    viewmodel.userNameController = TextEditingController();
+    viewmodel.emailController = TextEditingController();
+    viewmodel.phoneController = TextEditingController();
+    viewmodel.passwordController = TextEditingController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocListener<RegisterScreenViewmodel, RegisterState>(
       bloc: viewmodel,
@@ -60,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               posActionName: 'Ok',
             posAction: (){
               Navigator.of(context).pushReplacementNamed(
-                OtpScreen.routName,
+                HomeScreen.routName,
                 arguments: viewmodel.emailController.text,
               );
             }
@@ -229,9 +229,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
-                      viewmodel.SignUp();
-                      // Navigator.of(context)
-                      //     .pushNamed(OtpScreen.routName);
+                      viewmodel.SignUp(context);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(11),
