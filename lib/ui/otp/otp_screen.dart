@@ -3,11 +3,21 @@ import 'package:graduation_project/ui/Theme/theme.dart';
 import 'package:graduation_project/ui/otp/text_filed_otpScreen.dart';
 import 'package:graduation_project/ui/sign_up_screen/sign_up_screen.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   static const String routName = 'otp';
   OtpScreen({super.key});
-  var formKey = GlobalKey<FormState>();
 
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  var formKey = GlobalKey<FormState>();
+  final TextEditingController otpController1 = TextEditingController();
+  final TextEditingController otpController2 = TextEditingController();
+  final TextEditingController otpController3 = TextEditingController();
+  final TextEditingController otpController4 = TextEditingController();
+  final TextEditingController otpController5 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,27 +69,82 @@ class OtpScreen extends StatelessWidget {
                     SizedBox(
                       height: 80,
                       width: 70,
-                      child: TextFiledOtpScreen(),
+                      child: TextFiledOtpScreen(
+                        controller: otpController1,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Verification code is required";
+                          }
+                          if (value != otpController1.value) {
+                            return "Doesn't Match";
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 80,
                       width: 70,
-                      child: TextFiledOtpScreen(),
+                      child: TextFiledOtpScreen(
+                        controller: otpController2,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Verification code is required";
+                          }
+                          if (value != otpController2.value) {
+                            return "Doesn't Match";
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 80,
                       width: 70,
-                      child: TextFiledOtpScreen(),
+                      child: TextFiledOtpScreen(
+                        controller: otpController3,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Verification code is required";
+                          }
+                          if (value != otpController3.value) {
+                            return "Doesn't Match";
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 80,
                       width: 70,
-                      child: TextFiledOtpScreen(),
+                      child: TextFiledOtpScreen(
+                        controller: otpController4,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Verification code is required";
+                          }
+                          if (value != otpController4.value) {
+                            return "Doesn't Match";
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 80,
                       width: 70,
-                      child: TextFiledOtpScreen(),
+                      child: TextFiledOtpScreen(
+                        controller: otpController5,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Verification code is required";
+                          }
+                          if (value != otpController5.value) {
+                            return "Doesn't Match";
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                   ],
                 ),
@@ -100,7 +165,7 @@ class OtpScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                isOtpValid();
+                Otp();
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(11),
@@ -118,8 +183,7 @@ class OtpScreen extends StatelessWidget {
     );
   }
 
- void isOtpValid() {
-    if (formKey.currentState?.validate() == true) {
-    }
+  void Otp() {
+    if (formKey.currentState?.validate() == true) {}
   }
 }

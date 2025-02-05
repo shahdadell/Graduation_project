@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/App_Images/app_images.dart';
+import 'package:graduation_project/domain/di.dart';
 import 'package:graduation_project/domain/use_case/register_use_case.dart';
 import 'package:graduation_project/ui/Theme/dialog_utils.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
-import 'package:graduation_project/ui/home_screen/home_screen.dart';
 import 'package:graduation_project/ui/main_screen/main_screen.dart';
 import 'package:graduation_project/ui/otp/otp_screen.dart';
 import 'package:graduation_project/ui/sign_up_screen/text_filed_siginup.dart';
@@ -21,9 +21,8 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   RegisterScreenViewmodel viewmodel = RegisterScreenViewmodel(
-   registerUseCase: injectRegisterUseCase(),
+    registerUseCase: injectRegisterUseCase(),
   );
-
 
   @override
   void dispose() {
@@ -56,15 +55,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               posActionName: 'Ok');
         } else if (state is RegisterSuccessState) {
           DialogUtils.hideLoading(context);
-          DialogUtils.showMessage(context, state.response.message ?? '',
-              posActionName: 'Ok',
-            posAction: (){
-              Navigator.of(context).pushReplacementNamed(
-                HomeScreen.routName,
-                arguments: viewmodel.emailController.text,
-              );
-            }
-          );
+          DialogUtils.showMessage(
+              context, state.response.registerResponseEntity?.message ?? '',
+              posActionName: 'Ok', posAction: () {
+            Navigator.of(context).pushReplacementNamed(
+              OtpScreen.routName,
+              arguments: viewmodel.emailController.text,
+            );
+          });
         }
       },
       child: Scaffold(
@@ -110,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 5),
                   TextFiledSingup(
-                    text: 'User name / Email',
+                    text: 'Email',
                     type: TextInputType.emailAddress,
                     action: TextInputAction.done,
                     icon: Icons.email,

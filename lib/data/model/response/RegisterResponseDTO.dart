@@ -1,8 +1,10 @@
+import 'package:graduation_project/domain/entities/auth_result_entity.dart';
+
 /// status : "success"
 /// message : "User registered successfully. Please check your email to complete the registration."
 
-class RegisterResponse {
-  RegisterResponse({
+class RegisterResponseDTO {
+  RegisterResponseDTO({
     String? status,
     String? message,
   }) {
@@ -10,17 +12,17 @@ class RegisterResponse {
     _message = message;
   }
 
-  RegisterResponse.fromJson(dynamic json) {
+  RegisterResponseDTO.fromJson(dynamic json) {
     _status = json['status'];
     _message = json['message'];
   }
   String? _status;
   String? _message;
-  RegisterResponse copyWith({
+  RegisterResponseDTO copyWith({
     String? status,
     String? message,
   }) =>
-      RegisterResponse(
+      RegisterResponseDTO(
         status: status ?? _status,
         message: message ?? _message,
       );
@@ -32,5 +34,8 @@ class RegisterResponse {
     map['status'] = _status;
     map['message'] = _message;
     return map;
+  }
+  AuthResultEntity toAuthResultEntity(){
+    return AuthResultEntity();
   }
 }

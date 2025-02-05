@@ -1,5 +1,5 @@
-
-import 'package:graduation_project/data/model/response/RegisterResponse.dart';
+import 'package:graduation_project/data/model/response/RegisterResponseDTO.dart';
+import 'package:graduation_project/domain/entities/auth_result_entity.dart';
 
 abstract class RegisterState {}
 
@@ -11,7 +11,7 @@ class RegisterLoadingState extends RegisterState {
 }
 
 class RegisterSuccessState extends RegisterState {
-  RegisterResponse response;
+  AuthResultEntity response;
   RegisterSuccessState({required this.response});
 }
 
