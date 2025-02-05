@@ -22,6 +22,8 @@ class LoginResponseDTO {
     return map;
   }
   AuthResultEntity toAuthResultEntity(){
-    return AuthResultEntity();
+    return AuthResultEntity(
+      
+    );
   }
 }

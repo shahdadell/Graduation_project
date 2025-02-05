@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
-import 'package:graduation_project/ui/home_screen/home.dart';
-import 'package:graduation_project/ui/home_screen/home_screen.dart';
+import 'package:graduation_project/ui/home_screen/tabs/home.dart';
+import 'package:graduation_project/ui/home_screen/tabs/home_screen.dart';
 
 class Notifications extends StatelessWidget {
   static const String routName = 'notifications' ;

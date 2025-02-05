@@ -1,8 +1,10 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/blocObserver.dart';
 import 'package:graduation_project/ui/cart/cart.dart';
-import 'package:graduation_project/ui/home_screen/home.dart';
-import 'package:graduation_project/ui/home_screen/home_screen.dart';
+import 'package:graduation_project/ui/home_screen/tabs/home.dart';
+import 'package:graduation_project/ui/home_screen/tabs/home_screen.dart';
 import 'package:graduation_project/ui/main_screen/main_screen.dart';
 import 'package:graduation_project/ui/notifications/notifications.dart';
 import 'package:graduation_project/ui/otp/otp_screen.dart';
@@ -10,9 +12,9 @@ import 'package:graduation_project/ui/sign_up_screen/sign_up_screen.dart';
 import 'package:graduation_project/ui/sing_in_screen/sign_in_screen.dart';
 import 'package:graduation_project/ui/splash_screen/splash_screen.dart';
 
-import 'data/model/category_details.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
@@ -27,16 +29,14 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashScreen.routName,
       routes: {
         SplashScreen.routName : (context) => const SplashScreen(),
-        HomeScreen.routName : (context) => const HomeScreen(),
+        HomeScreen.routName : (context) =>  HomeScreen(),
         MainScreen.routName : (context) => const MainScreen(),
         SignInScreen.routName : (context) => const SignInScreen(),
         SignUpScreen.routName : (context) => const SignUpScreen(),
         OtpScreen.routName : (context) =>  OtpScreen(),
-        //CategoryDetails.routName: (context) => const CategoryDetails(),
         Notifications.routName: (context) => const Notifications(),
         Cart.routName: (context) => const Cart(),
         Home.routName: (context) => const Home(),
-
       },
     );
   }

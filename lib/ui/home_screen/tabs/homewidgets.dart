@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/app_images/app_images.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
-import 'package:graduation_project/ui/cart/cart.dart';
-import 'package:graduation_project/ui/home_screen/homevariables.dart';
+import 'package:graduation_project/ui/home_screen/tabs/homevariables.dart';
 import 'package:graduation_project/ui/home_screen/style.dart';
-import '../notifications/notifications.dart';
-import 'decoration.dart';
+import '../decoration.dart';
 
 Widget homeTopBar(BuildContext context) {
   return Row(
@@ -105,7 +103,7 @@ Widget homeTopBar(BuildContext context) {
 
 Widget searchField(double w) {
   return Container(
-    margin: EdgeInsets.only(top: 10, right: w * .1, bottom: 20, left: 10),
+    margin: EdgeInsets.only(top: 10, right: 20, bottom: 20, left: 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(32),
       color: MyTheme.grayColor3,
@@ -472,7 +470,7 @@ Widget bottomNavigationBar({required int selectedIndex , required Function (int)
         ),
         BottomNavigationBarItem(
           icon: Image.asset(
-            AppImages.home,
+            AppImages.cart,
             width: 24,
             height: 24,
           ),
@@ -486,7 +484,6 @@ Widget bottomNavigationBar({required int selectedIndex , required Function (int)
           ),
           label: 'cart',
         ),
-
       ],
     ),
   );

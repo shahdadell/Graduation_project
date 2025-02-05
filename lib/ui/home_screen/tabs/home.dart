@@ -1,15 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/ui/home_screen/style.dart';
+import 'package:graduation_project/ui/home_screen/tabs/cubit/home_tab_states.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../App_Images/app_images.dart';
-import '../Theme/theme.dart';
+import '../../../App_Images/app_images.dart';
+import '../../Theme/theme.dart';
 import 'homevariables.dart';
 import 'homewidgets.dart';
 
 class Home extends StatefulWidget {
   static const String routName = 'home' ;
-
   const Home({super.key});
 
   @override
@@ -78,6 +79,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
+              //categories//
               GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -88,7 +90,8 @@ class _HomeState extends State<Home> {
                   TextAndImageClass item = categories[index];
                   return InkWell(
                     overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-                    onTap: () {},
+                    onTap: () {
+                    },
                     child: Column(
                       children: [
                         Image.asset(
