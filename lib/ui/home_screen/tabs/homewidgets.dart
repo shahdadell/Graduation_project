@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/app_images/app_images.dart';
 import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:graduation_project/ui/home_screen/tabs/homevariables.dart';
 import 'package:graduation_project/ui/home_screen/style.dart';
-import 'decoration.dart';
-import 'homevariables.dart';
+import '../decoration.dart';
 
-Widget homeTopBar(){
+Widget homeTopBar(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       InkWell(
-        onTap: (){},
+        onTap: () {},
         overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-        child: Image.asset(AppImages.drawericon , width: 24, height: 16,),
+        child: Image.asset(
+          AppImages.drawericon,
+          width: 24,
+          height: 16,
+        ),
       ),
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -54,8 +58,7 @@ Widget homeTopBar(){
                     style: GoogleFonts.rubik(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: MyTheme.whiteColor
-                    ),
+                        color: MyTheme.whiteColor),
                   ),
                 )
               ],
@@ -72,23 +75,35 @@ Widget homeTopBar(){
           ],
         ),
       ),
-      InkWell(
-        onTap: (){},
-        overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-        child: Image.asset(AppImages.notification , width: 24, height: 24,),
-      ),
-      InkWell(
-        onTap: (){},
-        overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-        child: Image.asset(AppImages.cart , width: 24, height: 24,),
-      ),
+      // InkWell(
+      //   onTap: () {
+      //     Navigator.of(context).pushNamed(Notifications.routName);
+      //   },
+      //   overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
+      //   child: Image.asset(
+      //     AppImages.notification,
+      //     width: 24,
+      //     height: 24,
+      //   ),
+      // ),
+      // InkWell(
+      //   onTap: () {
+      //     Navigator.of(context).pushNamed(Cart.routName);
+      //   },
+      //   overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
+      //   child: Image.asset(
+      //     AppImages.cart,
+      //     width: 24,
+      //     height: 24,
+      //   ),
+      // ),
     ],
   );
 }
 
-Widget searchField(double w){
+Widget searchField(double w) {
   return Container(
-    margin: EdgeInsets.only(top: 10 , right: w * .1 , bottom: 20 , left: 10),
+    margin: EdgeInsets.only(top: 10, right: 20, bottom: 20, left: 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(32),
       color: MyTheme.grayColor3,
@@ -99,14 +114,16 @@ Widget searchField(double w){
   );
 }
 
-Widget carouselSliderImage (String image){
+Widget carouselSliderImage(String image) {
   return ClipRRect(
     borderRadius: BorderRadius.circular(12),
-    child: Image.asset(image,),
+    child: Image.asset(
+      image,
+    ),
   );
 }
 
-Widget horizontalListTitle (String text){
+Widget horizontalListTitle(String text) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Row(
@@ -117,13 +134,17 @@ Widget horizontalListTitle (String text){
           text,
           style: textStyle(20, FontWeight.w700, MyTheme.blackColor),
         ),
-        Icon(Icons.arrow_forward_ios , color: MyTheme.iconGrayColor, size: 16,)
+        Icon(
+          Icons.arrow_forward_ios,
+          color: MyTheme.iconGrayColor,
+          size: 16,
+        )
       ],
     ),
   );
 }
 
-Widget horizontalList(List list,){
+Widget horizontalList(List list,) {
   return Container(
     height: 220,
     margin: const EdgeInsets.only(
@@ -155,12 +176,11 @@ Widget horizontalList(List list,){
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 10 , left: 5),
+                    margin: const EdgeInsets.only(top: 10, left: 5),
                     padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         color: MyTheme.mauveColor,
-                        borderRadius: BorderRadius.circular(50)
-                    ),
+                        borderRadius: BorderRadius.circular(50)),
                     child: Text(
                       item.discount!,
                       style: textStyle(10, FontWeight.w700, MyTheme.whiteColor),
@@ -172,7 +192,7 @@ Widget horizontalList(List list,){
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
                   item.name!,
-                  style: textStyle(18, FontWeight.w600 , MyTheme.blackColor),
+                  style: textStyle(18, FontWeight.w600, MyTheme.blackColor),
                 ),
               ),
               SizedBox(
@@ -184,7 +204,8 @@ Widget horizontalList(List list,){
                       children: [
                         Text(
                           item.destination!,
-                          style: textStyle(14, FontWeight.w500 , MyTheme.iconGrayColor),
+                          style: textStyle(
+                              14, FontWeight.w500, MyTheme.iconGrayColor),
                         ),
                         const SizedBox(width: 4),
                         Container(
@@ -201,7 +222,8 @@ Widget horizontalList(List list,){
                         const SizedBox(width: 2),
                         Text(
                           item.rate!,
-                          style: textStyle(14, FontWeight.w500 , MyTheme.iconGrayColor),
+                          style: textStyle(
+                              14, FontWeight.w500, MyTheme.iconGrayColor),
                         ),
                       ],
                     ),
@@ -221,7 +243,7 @@ Widget horizontalList(List list,){
   );
 }
 
-Widget horizontalDishesList(List list,){
+Widget horizontalDishesList(List list,) {
   return Container(
     height: 220,
     margin: const EdgeInsets.only(
@@ -250,7 +272,7 @@ Widget horizontalDishesList(List list,){
               ),
               Text(
                 item.name!,
-                style: textStyle(16, FontWeight.w500 , MyTheme.blackColor),
+                style: textStyle(16, FontWeight.w500, MyTheme.blackColor),
               ),
             ],
           ),
@@ -260,7 +282,7 @@ Widget horizontalDishesList(List list,){
   );
 }
 
-Widget horizontalRestaurantList(List list,){
+Widget horizontalRestaurantList(List list,) {
   return Container(
     height: 220,
     margin: const EdgeInsets.only(
@@ -291,20 +313,21 @@ Widget horizontalRestaurantList(List list,){
               ),
               Text(
                 item.name!,
-                style: textStyle(16, FontWeight.w600 , MyTheme.blackColor),
+                style: textStyle(16, FontWeight.w600, MyTheme.blackColor),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.location_on_outlined ,
+                    Icons.location_on_outlined,
                     color: MyTheme.iconGrayColor,
                     size: 20,
                   ),
                   const SizedBox(width: 2),
                   Text(
                     item.location!,
-                    style: textStyle(14, FontWeight.w500, MyTheme.iconGrayColor),
+                    style:
+                        textStyle(14, FontWeight.w500, MyTheme.iconGrayColor),
                   )
                 ],
               )
@@ -316,7 +339,7 @@ Widget horizontalRestaurantList(List list,){
   );
 }
 
-Widget recommendedListView(List list){
+Widget recommendedListView(List list) {
   return Padding(
     padding: const EdgeInsets.only(
       top: 10,
@@ -347,12 +370,11 @@ Widget recommendedListView(List list){
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 10 , left: 5),
+                    margin: const EdgeInsets.only(top: 10, left: 5),
                     padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         color: MyTheme.mauveColor,
-                        borderRadius: BorderRadius.circular(50)
-                    ),
+                        borderRadius: BorderRadius.circular(50)),
                     child: Text(
                       item.discount!,
                       style: textStyle(10, FontWeight.w700, MyTheme.whiteColor),
@@ -366,7 +388,7 @@ Widget recommendedListView(List list){
                 width: double.infinity,
                 child: Text(
                   item.name!,
-                  style: textStyle(18, FontWeight.w600 , MyTheme.blackColor),
+                  style: textStyle(18, FontWeight.w600, MyTheme.blackColor),
                 ),
               ),
               SizedBox(
@@ -378,7 +400,8 @@ Widget recommendedListView(List list){
                       children: [
                         Text(
                           item.destination!,
-                          style: textStyle(14, FontWeight.w500 , MyTheme.iconGrayColor),
+                          style: textStyle(
+                              14, FontWeight.w500, MyTheme.iconGrayColor),
                         ),
                         const SizedBox(width: 4),
                         Container(
@@ -395,7 +418,8 @@ Widget recommendedListView(List list){
                         const SizedBox(width: 2),
                         Text(
                           item.rate!,
-                          style: textStyle(14, FontWeight.w500 , MyTheme.iconGrayColor),
+                          style: textStyle(
+                              14, FontWeight.w500, MyTheme.iconGrayColor),
                         ),
                       ],
                     ),
@@ -407,18 +431,60 @@ Widget recommendedListView(List list){
                   ],
                 ),
               ),
-              if(index != list.length - 1) Container(
-                margin: const EdgeInsets.symmetric(
-                    vertical: 10
-                ),
-                height: 1,
-                width: double.infinity,
-                color: MyTheme.iconGrayColor,
-              )
+              if (index != list.length - 1)
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  height: 1,
+                  width: double.infinity,
+                  color: MyTheme.iconGrayColor,
+                )
             ],
           ),
         );
       },
+    ),
+  );
+}
+
+Widget bottomNavigationBar({required int selectedIndex , required Function (int) onTapFunction, required BuildContext context}){
+  return ClipRRect(
+    borderRadius: const BorderRadius.only(
+      topLeft: Radius.circular(20),
+      topRight: Radius.circular(20),
+    ),
+    child: BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: MyTheme.whiteColor,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      currentIndex: selectedIndex,
+      onTap: onTapFunction,
+      items: [
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            AppImages.notification,
+            width: 24,
+            height: 24,
+          ),
+          label: 'Notifications',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            AppImages.cart,
+            width: 24,
+            height: 24,
+          ),
+          label: 'home',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset(
+            AppImages.cart,
+            width: 24,
+            height: 24,
+          ),
+          label: 'cart',
+        ),
+      ],
     ),
   );
 }

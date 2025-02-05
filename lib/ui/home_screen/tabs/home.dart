@@ -1,22 +1,23 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/app_images/app_images.dart';
-import 'package:graduation_project/ui/Theme/theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/ui/home_screen/style.dart';
+import 'package:graduation_project/ui/home_screen/tabs/cubit/home_tab_states.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
+import '../../../App_Images/app_images.dart';
+import '../../Theme/theme.dart';
 import 'homevariables.dart';
 import 'homewidgets.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const String routName = 'HomeScreen';
-  const HomeScreen({super.key});
+class Home extends StatefulWidget {
+  static const String routName = 'home' ;
+  const Home({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              homeTopBar(),
+              homeTopBar(context),
               searchField(w),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
@@ -78,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              //categories//
               GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -88,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   TextAndImageClass item = categories[index];
                   return InkWell(
                     overlayColor: WidgetStatePropertyAll(MyTheme.transparent),
-                    onTap: () {},
+                    onTap: () {
+                    },
                     child: Column(
                       children: [
                         Image.asset(
@@ -112,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 20),
                   decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                  BoxDecoration(borderRadius: BorderRadius.circular(16)),
                   width: 327,
                   height: 116,
                   child: Stack(
@@ -177,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: textStyle(20, FontWeight.w700, MyTheme.blackColor),
                 ),
               ),
-              recommendedListView(recommendedList)
+              recommendedListView(recommendedList),
             ],
           ),
         ),

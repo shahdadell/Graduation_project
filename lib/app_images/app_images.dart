@@ -9,6 +9,7 @@ class AppImages{
   static const String appleButton = 'assets/images/ButtonApple.png';
   static const String background = 'assets/images/background.png';
   static const String drawericon = 'assets/images/drawericon.png';
+  static const String home = 'assets/images/home.png';
   static const String restaurant = 'assets/images/restaurant.png';
   static const String rectangle = 'assets/images/rectangle.png';
   static const String indicator = 'assets/images/indicator.png';

@@ -1,4 +1,3 @@
-
 import 'package:graduation_project/App_Images/app_images.dart';
 
 String userName = "Menna Hosny Ali";
@@ -8,7 +7,7 @@ List <TextAndImageClass> categories = [
   //TextAndImageClass(icon: AppImages.sale, name: "Flash deals"),
   TextAndImageClass(icon: AppImages.restaurant, name: "Restaurants"),
   TextAndImageClass(icon: AppImages.coffeehouse, name: "Coffee"),
-  TextAndImageClass(icon: AppImages.tour, name: "Tourism places"),
+  TextAndImageClass(icon: AppImages.tour, name: "Tour places"),
   TextAndImageClass(icon: AppImages.hotel, name: "Hotel"),
   //TextAndImageClass(icon: AppImages.vegetable, name: "Vegetable"),
   //TextAndImageClass(icon: AppImages.bbq, name: "BBQ"),
