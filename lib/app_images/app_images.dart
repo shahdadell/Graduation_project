@@ -1,4 +1,4 @@
-class AppImages{
+class AppImages {
   static const String vegetablesimage = 'assets/images/vegetablesimage.png';
   static const String restaurantimg2 = 'assets/images/restaurantimg2.jpeg';
   static const String restaurantimg = 'assets/images/restaurantimg.png';
@@ -9,7 +9,6 @@ class AppImages{
   static const String appleButton = 'assets/images/ButtonApple.png';
   static const String background = 'assets/images/background.png';
   static const String drawericon = 'assets/images/drawericon.png';
-  static const String home = 'assets/images/home.png';
   static const String restaurant = 'assets/images/restaurant.png';
   static const String rectangle = 'assets/images/rectangle.png';
   static const String indicator = 'assets/images/indicator.png';
@@ -50,8 +49,9 @@ class AppImages{
   static const String pass = 'assets/images/pass.png';
   static const String tour = 'assets/images/tour.png';
   static const String bbq = 'assets/images/bbq.png';
-
-
-
-
+  static const String loading = 'assets/mages/loading.json';
+  static const String iconHome = 'assets/images/Iconly.png';
+  static const String iconOrder = 'assets/images/receipt-item.png';
+  static const String iconFavourite = 'assets/images/heart.png';
+  static const String iconReward = 'assets/images/gift.png';
 }
